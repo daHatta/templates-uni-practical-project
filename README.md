@@ -18,3 +18,8 @@ All templates were used for an implemetation into a wordpress site.
 - Commenting Section
 - Responsive Design
 - CSS build with SASS
+
+## Third Party
+
+- CSS-Framework Bootstrap
+- JS-Library jQuery
