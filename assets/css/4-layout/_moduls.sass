@@ -1,0 +1,63 @@
+// green background, border top and rounded bottom corners
+.background_green
+  border-top: 5px solid $primary-color
+  border-radius: 0 0 8px 8px
+  background-color: $secondary-background-color
+
+// dark-green background and rounded bottom corners
+.background_dark-green
+  border-radius: 0 0 8px 8px
+  background-color: $primary-color
+
+.form_fields
+  border-top: 2px solid $primary-color
+  border-radius: 0 0 8px 8px
+  background-color: $primary-background-color
+  color: $primary-font-color
+
+.error
+  label
+    color: $error-color
+  input
+    border-top-color: $error-color
+
+.icon_frame
+    border: 3px solid $primary-color
+    border-radius: 50%
+    background-color: $primary-background-color
+
+//https://www.toptal.com/designers/htmlarrows/symbols/medium-small-white-circle/
+.list-style_circle li
+  @include convert-to-rem(padding-left, 19)
+  @include convert-to-rem(text-indent, -16)
+
+.list-style_circle li::before
+  color: $primary-color
+  content: "\26AC"
+  @include convert-to-rem(padding-right, 6)
+  font-weight: 400
+
+//center align vertical
+.centered
+  position: absolute
+  top: 50%
+  left: 0%
+  transform: translate(0%, -50%)
+
+//screen-reader
+.screen-reader
+  position: absolute!important
+  clip: rect(1px,1px,1px,1px)
+
+// buttons
+.image-gallery__button
+  position: absolute
+  top: 0
+  height: 100%
+  border: none
+
+.image-gallery__button_left
+  left: 0
+
+.image-gallery__button_right
+  right: 0

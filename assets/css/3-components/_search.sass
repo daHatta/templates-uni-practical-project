@@ -1,0 +1,60 @@
+// sitesearch
+.site-header__search
+  position: absolute
+  border: 5px solid $primary-color
+  top: 0
+  @include convert-to-rem(right, 15)
+
+.site-header__search_form
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+
+.site-header__search_input
+  @include convert-to-rem(margin-right, 5)
+  border: 1px solid $input-border-color
+  border-radius: 0 0 0 4px
+  @include convert-to-rem(height, 30)
+  @include convert-to-rem(padding, 3)
+  @include convert-to-rem(padding-left, 6)
+  @include convert-to-rem(font-size, 15)
+
+.site-header__search_button
+  border: 1px solid $button-border-color
+  border-radius: 0 0 4px 0
+  background-color: $button-background-color
+  color: $button-font-color
+  @include convert-to-rem(padding, 3)
+  @include convert-to-rem(padding-left, 6)
+  @include convert-to-rem(font-size, 14)
+  @include convert-to-rem(width, 35)
+  @include convert-to-rem(height, 30)
+  text-indent: -9999px
+  background: url('../img/suche.png') no-repeat center center
+
+// under 768 = sm
+@include respond-below(sm)
+  .site-header__search
+    display: none
+    margin-left: -15px
+    margin-right: -15px
+    border-color: $secondary-color
+
+    &.background_dark-green
+      border-radius: 0
+      background-color: $secondary-color
+
+  .open-search
+    display: block
+    position: relative
+    top: auto
+    right: auto
+
+  .site-header__search_input
+    margin-right: 0
+    border-radius: 12px 0 0 12px
+    @include convert-to-rem(text-indent, 10)
+    flex: auto
+
+  .site-header__search_button
+    border-radius: 0 12px 12px 0

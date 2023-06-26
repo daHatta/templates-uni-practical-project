@@ -1,0 +1,56 @@
+// image gallery
+// https://ebene11.com/imageslider-ohne-javascript.html
+// https://www.jssor.com/demos/carousel-slider.slider
+// https://bxslider.com/
+// https://smartslider3.com/carousel-with-lightbox/
+// https://smartslider3.com/blog/lightbox-slider/
+// https://imageslidermaker.com/
+// https://www.youtube.com/watch?v=w7pLxttccaQ
+// https://www.w3schools.com/howto/howto_js_lightbox.asp
+.image-gallery__wrapper
+  position: relative
+  @include convert-to-rem(height, 298)
+  width: 100%
+  background-color: $secondary-background-color
+  border-radius: 0 0 8px 8px
+  overflow: hidden
+
+  .image-gallery__button
+    @include convert-to-rem(width, 65)
+    @include convert-to-rem(font-size, 41)
+    background-color: $primary-color
+    color: $button-font-color
+    &:hover
+      background-color: $secondary-color
+
+.gallery-effekt
+  .image-gallery__button
+    opacity: 0.4
+
+.image-gallery__list
+  position: absolute
+  left: 0
+  display: block
+  @include convert-to-rem(min-width, 1140)
+  @include convert-to-rem(height, 238)
+  @include convert-to-rem(margin-top, 30)
+  @include convert-to-rem(margin-bottom, 30)
+  clear: both
+  overflow: hidden
+
+.image-gallery__list_item
+  float: left
+  display: inline-block
+  @include convert-to-rem(margin-right, 30)
+
+.image-gallery__list_link
+  display: block
+  &:hover
+    .image_frame
+      border-color: $hover-color
+
+// Under 992 = md
+@include respond-below(md)
+
+  .image-gallery__button
+    @include convert-to-rem(width, 35)

@@ -1,0 +1,51 @@
+/* Site Footer */
+
+.site-footer
+  border-top: 3px solid $secondary-color
+  @include convert-to-rem(padding-top, 40)
+  border-bottom: 24px solid $primary-color
+
+.site-footer__contact
+  @include convert-to-rem(font-size, 17)
+  @include convert-to-rem(line-height, 24)
+  @include convert-to-rem(margin-bottom, 55)
+  a, a:active, a:visited
+    color: $link-color
+  a:hover
+    color: $hover-color
+
+.site-footer__partner
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-end
+  @include convert-to-rem(margin-bottom, 55)
+
+.site-footer__partner_item:first-child
+  @include convert-to-rem(margin-right, 20)
+
+.site-footer__partner_link
+  display: block
+  @include convert-to-rem(margin-top, 5)
+
+.site-footer__nav
+  .menu-item
+    a
+      display: block
+      padding: .5rem 1rem
+      @include convert-to-rem(font-size, 19)
+      text-transform: uppercase
+
+    a:first-child
+      padding-left: 0
+
+// under 992 = md and above 768 = sm
+@include respond-between(sm, md)
+  .site-footer__partner_item:first-child
+    margin-right: 0
+    @include convert-to-rem(margin-bottom, 20)
+
+// under 768 = sm
+@include respond-below(sm)
+  .site-footer__partner
+    justify-content: center
+

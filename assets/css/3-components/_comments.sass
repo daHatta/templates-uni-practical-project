@@ -1,0 +1,81 @@
+// Comments
+.comments__list
+  @include convert-to-rem(margin-left, 155)
+  @include convert-to-rem(margin-right, 155)
+
+.comment__wrapper
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  @include convert-to-rem(padding, 15)
+  @include convert-to-rem(padding-bottom, 30)
+  @include convert-to-rem(margin-bottom, 20)
+
+.comment__author_avatar
+  display: inline-block
+  position: relative
+  @include convert-to-rem(margin-right, 15)
+  @include convert-to-rem(width, 80)
+  @include convert-to-rem(height, 80)
+  overflow: hidden
+
+.comment__body
+  flex: auto
+  width: calc(100% - 100px)
+  @include convert-to-rem(margin-top, 11)
+
+.comment__body_author_username
+  @include convert-to-rem(font-size, 21)
+  font-weight: 700
+
+.comment__body_time
+  @include convert-to-rem(font-size, 15)
+  font-style: italic
+
+.comment__body_content
+  @include convert-to-rem(margin-top, 25)
+  p
+    @include convert-to-rem(font-size, 18)
+
+.comment__actions
+  position: absolute
+  top: 0
+  @include convert-to-rem(right, 15)
+
+.comment__actions_reply
+  &:hover
+    background-color: $hover-color
+
+.comment__actions_reply_button
+  border: 0
+  background-color: transparent
+  @include convert-to-rem(margin-left, 10)
+  @include convert-to-rem(margin-right, 10)
+  @include convert-to-rem(font-size, 16)
+  @include convert-to-rem(line-height, 32)
+  color: $button-font-color
+  text-transform: uppercase
+
+.respond__list
+  @include convert-to-rem(margin-left, 95)
+
+.respond__list .comment__actions
+  display: none
+
+// Under 992 = md
+@include respond-below(md)
+
+  .comments__list
+    @include convert-to-rem(margin-left, 15)
+    @include convert-to-rem(margin-right, 15)
+
+// Under 768 = sm
+@include respond-below(sm)
+
+  .comments__list
+    margin-left: 0
+    margin-right: 0
+
+  .respond__list
+    @include convert-to-rem(margin-left, 30)

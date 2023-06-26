@@ -1,0 +1,94 @@
+/* --- Site Header Navigation --- */
+.site-header__navigation
+  display: inline-block
+  position: absolute
+  right: 0
+  @include convert-to-rem(bottom, 5)
+
+.site-header__navigation_wrapper
+  ul.nav
+    li
+      position: relative
+
+      &:hover
+        background-color: $secondary-background-color
+
+      ul.sub-menu
+        display: none
+        position: absolute
+        @include convert-to-rem(top, 43)
+        background-color: $primary-background-color
+        z-index: 20
+
+        &.open-sub
+          display: block
+
+      a
+        display: block
+        padding: .5rem 1rem
+        text-transform: uppercase
+
+        &:hover, &:active, &:visited
+          color: $link-color
+
+// above 992 = md
+@include respond-above(md)
+  .site-header__navigation
+
+    li
+      a
+        @include convert-to-rem(font-size, 18)
+
+
+// under 992 = md
+@include respond-below(md)
+  .site-header__navigation
+    display: flex
+    justify-content: center
+    position: relative
+    bottom: auto
+    right: auto
+
+  .site-header__navigation_wrapper
+    @include convert-to-rem(margin-top, 35)
+
+    ul.nav
+      li
+        a
+          @include convert-to-rem(font-size, 16)
+
+        .sub-menu
+          @include convert-to-rem(top, 40)
+
+// under 768 = sm
+@include respond-below(sm)
+
+  .site-header__navigation
+    display: block
+
+  .site-header__navigation_wrapper
+    display: block
+    width: 100%
+    @include convert-to-rem(margin-top, 45)
+    @include convert-to-rem(margin-bottom, 5)
+
+    ul.nav
+      display: none
+
+      .sub-menu
+        display: none
+        right: 0
+
+      .open-sub
+        display: block
+
+    .open
+      display: block
+
+    li
+      display: block
+      width: 100%
+
+      &:hover
+        background-color: $secondary-background-color
+

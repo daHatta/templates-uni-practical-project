@@ -1,0 +1,9 @@
+// sections
+section
+  @include convert-to-rem(padding-bottom, 80)
+
+// Under 992 = md
+@include respond-below(md)
+
+  section
+    @include convert-to-rem(padding-bottom, 60)

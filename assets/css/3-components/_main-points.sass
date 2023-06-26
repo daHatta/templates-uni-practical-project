@@ -1,0 +1,28 @@
+// list with main scope
+.main-points__wrapper
+  @include convert-to-rem(margin-top, 20)
+  @include convert-to-rem(padding-left, 155)
+  @include convert-to-rem(padding-right, 155)
+  @include convert-to-rem(padding-bottom, 20)
+  @include convert-to-rem(margin-bottom, 40)
+
+.main-points__list
+  @include convert-to-rem(margin-top, 30)
+  @include convert-to-rem(margin-bottom, 20)
+
+.main-points__list_item
+  @include convert-to-rem(padding-bottom, 7)
+  @include convert-to-rem(font-size, 19)
+  @include convert-to-rem(line-height, 29)
+  font-weight: 700
+
+// Under 992 = md
+@include respond-below(md)
+
+  .main-points__wrapper
+    @include convert-to-rem(padding-left, 30)
+    @include convert-to-rem(padding-right, 30)
+
+  .main-points__list_item
+    @include convert-to-rem(font-size, 18)
+    @include convert-to-rem(line-height, 28)

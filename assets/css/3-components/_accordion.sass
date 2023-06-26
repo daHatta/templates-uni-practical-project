@@ -1,0 +1,171 @@
+// https://www.w3schools.com/howto/howto_js_accordion.asp
+// https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html
+// https://www.barrierefreies-webdesign.de/knowhow/links-oder-buttons/accordion.html
+// https://tutorialzine.com/2017/03/css-triangles-without-hacks -> clip-path
+// https://www.youtube.com/watch?v=wEP1mUuLODQ
+
+.accordion__item
+  @include convert-to-rem(margin-bottom, 4)
+  &:last-child
+    margin-bottom: 0
+
+.accordion_item_header
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  border-bottom: 8px solid $primary-color
+
+  &:hover
+    border-bottom-color: $hover-color
+    color: $hover-color
+
+    .icon_frame
+      border-color: $hover-color
+
+    button
+      color: $hover-color
+
+    span
+      border-color: transparent transparent transparent $hover-color
+
+
+.accordion__item_icon
+  display: inline-block
+  position: relative
+  @include convert-to-rem(margin-right, 15)
+  margin-bottom: -8px
+  @include convert-to-rem(width, 80)
+  @include convert-to-rem(height, 80)
+  overflow: hidden
+
+  img
+    max-width: 100%
+    max-height: 100%
+
+.accordion__item_headline
+  flex: auto
+  display: flex
+  flex-direction: row
+  margin-bottom: -8px
+
+.accordion__item_trigger
+    position: relative
+    flex: auto
+    border: none
+    max-width: 100%
+    background: transparent
+    @include convert-to-rem(line-height, 80)
+    text-align: left
+    @include convert-to-rem(font-size, 30)
+    font-style: italic
+    font-weight: 700
+    color: $headline-color
+    &.active
+      .accordion__item_trigger-icon
+        right: 3%
+        top: 30%
+        transform: translate(50%, 50%)
+        transform: rotate(90deg)
+
+.accordion__item_trigger-icon
+  position: absolute
+  right: 2%
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 20px 0 20px 20px
+  border-color: transparent transparent transparent $primary-color
+
+.accordion__item_region
+  display: flex
+  @include convert-to-rem(min-height, 352)
+  @include convert-to-rem(padding-top, 20)
+  @include convert-to-rem(padding-right, 80)
+  @include convert-to-rem(padding-bottom, 20)
+  @include convert-to-rem(padding-left, 80)
+  background-color: $secondary-background-color
+  border-radius: 0 0 8px 8px
+  clear: both
+  &.hidden
+    display: none
+
+.accordion__item_region_image_container
+  flex: 1
+  @include convert-to-rem(margin-right, 30)
+  width: 50%
+  @include convert-to-rem(max-width, 460)
+  @include convert-to-rem(max-height, 307)
+  overflow: hidden
+
+.accordion__item_region_text_container
+  position: relative
+  flex: 1
+  width: 50%
+
+.accordion__item_region_text
+  @include convert-to-rem(margin-bottom, 44)
+  @include convert-to-rem(font-size, 18)
+  @include convert-to-rem(line-height, 27)
+  font-weight: 600
+
+.accordion__item_region_image_source
+  position: absolute
+  left: 0
+  @include convert-to-rem(bottom, 5)
+  font-weight: 400
+
+.accordion__item_region_text_link
+  position: absolute
+  right: 0
+  @include convert-to-rem(bottom, 5)
+  color: $primary-color
+  font-weight: 400
+
+  &:hover
+    color: $hover-color
+
+  em
+    font-style: normal
+
+// under 992 = md
+@include respond-below(md)
+  .accordion__item_region
+    flex-direction: column
+    justify-content: center
+
+  .accordion__item_region_image_container
+    flex: 0
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+    text-align: center
+    @include convert-to-rem(margin-bottom, 20)
+
+  .accordion__item_region_text_container
+    position: relative
+    flex: 0
+    width: 100%
+
+// under 768 = sm
+@include respond-below(sm)
+  .accordion__item_region_text
+    @include convert-to-rem(margin-bottom, 44)
+    @include convert-to-rem(font-size, 16)
+    @include convert-to-rem(line-height, 22)
+
+// under 576 = xs
+@include respond-below(xs)
+  .accordion__item_region
+    @include convert-to-rem(padding-right, 20)
+    @include convert-to-rem(padding-left, 20)
+
+// under 380 = xss
+@include respond-below(xxs)
+  .accordion__item_icon
+    display: none
+
+  .accordion__item_region_text_link
+    em
+      display: none

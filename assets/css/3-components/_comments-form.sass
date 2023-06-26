@@ -1,0 +1,87 @@
+.comment-respond
+  @include convert-to-rem(margin-left, 155)
+  @include convert-to-rem(margin-right, 155)
+
+.comment-respond__form
+  display: grid
+  @include convert-to-rem(grid-column-gap, 15)
+  grid-template-columns: 1fr 1fr
+  @include convert-to-rem(padding-top, 20)
+  @include convert-to-rem(padding-left, 95)
+  @include convert-to-rem(padding-right, 95)
+  @include convert-to-rem(padding-bottom, 20)
+
+  label
+    display: block
+    margin-bottom: 0
+    font-weight: 700
+
+.comment-form-comment
+  grid-column: 1/-1
+
+.comment-form-author
+  grid-column: 1
+  input
+    display: inline-block
+    width: 100%
+
+.comment-form-email
+  grid-column: 2
+  input
+    display: inline-block
+    width: 100%
+
+.comment-notes
+  grid-column: 1/-1
+  @include convert-to-rem(font-size, 12)
+  @include convert-to-rem(line-height, 22)
+  font-weight: 700
+
+.form-submit
+  grid-column: 2
+  text-align: right
+  margin-bottom: 0
+
+#comment
+  width: 100%
+  height: 120px
+  @include convert-to-rem(padding, 15)
+  @include convert-to-rem(font-size, 16)
+  @include convert-to-rem(line-height, 22)
+  resize: none
+
+#author, #email
+  @include convert-to-rem(padding, 3)
+  @include convert-to-rem(padding-left, 6)
+  @include convert-to-rem(font-size, 16)
+  @include convert-to-rem(line-height, 24)
+
+#submit
+  @include convert-to-rem(margin-top, 13)
+  @include convert-to-rem(padding-left, 10)
+  @include convert-to-rem(padding-right, 10)
+  @include convert-to-rem(font-size, 16)
+  @include convert-to-rem(line-height, 32)
+  color: $button-font-color
+  text-transform: uppercase
+  &:hover
+    background-color: $hover-color
+
+// Under 992 = md
+@include respond-below(md)
+
+  .comment-respond
+    @include convert-to-rem(margin-left, 15)
+    @include convert-to-rem(margin-right, 15)
+
+// Under 768 = sm
+@include respond-below(sm)
+
+  .comment-respond
+    margin-left: 0
+    margin-right: 0
+
+  .comment-respond__form
+    @include convert-to-rem(padding-left, 30)
+    @include convert-to-rem(padding-right, 30)
+

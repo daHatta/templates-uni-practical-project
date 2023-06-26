@@ -1,0 +1,116 @@
+// https://askwpgirl.com/wordpress-image-gallery-lightbox-plugin/
+// https://de.wordpress.org/plugins/responsive-lightbox/
+// http://fancyapps.com/fancybox/3/
+// https://dev.vast.com/jquery-popup-overlay/
+// https://www.quickcleancode.com/easy-popup-overlay-with-jquery/
+// https://www.w3schools.com/howto/howto_js_lightbox.asp
+
+.overlay__background
+  display: none
+  position: fixed
+  height: 100%
+  width: 100%
+  overflow: auto
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background-color: rgba(0, 0 ,0, 0.8)
+  z-index: 2000
+
+.overlay__content
+  position: relative
+  @include convert-to-rem(margin-top, 100)
+  @include convert-to-rem(margin-left, 95)
+  @include convert-to-rem(margin-right, 95)
+  margin-bottom: auto
+
+// Gallery as overlay content
+.overlay__gallery
+  position: relative
+  @include convert-to-rem(padding-top, 10)
+  @include convert-to-rem(padding-left, 95)
+  @include convert-to-rem(padding-bottom, 25)
+  @include convert-to-rem(padding-right, 95)
+  background-color: $primary-background-color
+  border-radius: 0 0 8px 8px
+  overflow: hidden
+  h3
+    @include convert-to-rem(line-height, 48)
+    border-bottom: 1px solid $secondary-color
+
+  .image-gallery__button
+    @include convert-to-rem(width, 95)
+    @include convert-to-rem(font-size, 75)
+    background-color: $primary-background-color
+    color: $primary-color
+    &:hover
+      color: $secondary-color
+
+.overlay__content_slide
+  @include convert-to-rem(padding-left, 15)
+  @include convert-to-rem(padding-right, 15)
+
+.overlay__image_wrapper
+  @include convert-to-rem(max-width, 730)
+  @include convert-to-rem(max-height, 487)
+  overflow: hidden
+
+.overlay__image_source
+  @include convert-to-rem(margin-bottom, 20)
+  @include convert-to-rem(font-size, 13)
+  @include convert-to-rem(line-height, 30)
+  span
+    font-weight: 700
+
+.overlay__image_description
+  @include convert-to-rem(font-size, 18)
+  @include convert-to-rem(line-height, 26)
+  @include convert-to-rem(margin-bottom, 30)
+  p
+    margin-bottom: 0
+
+.overlay__image_scope
+  @include convert-to-rem(font-size, 21)
+  @include convert-to-rem(line-height, 33)
+  font-weight: 700
+
+.overlay__button_close
+  position: absolute
+  top: 0
+  right: 0
+  color: $primary-color
+  border: none
+  background-color: transparent
+  @include convert-to-rem(font-size, 38)
+  &:hover
+    color: $secondary-color
+
+// under 992 = md
+@include respond-below(md)
+
+  .overlay__content
+    @include convert-to-rem(margin-left, 0)
+    @include convert-to-rem(margin-right, 0)
+
+// under 768 = sm
+@include respond-below(sm)
+
+  .overlay__gallery
+    @include convert-to-rem(padding-left, 65)
+    @include convert-to-rem(padding-right, 65)
+
+    .image-gallery__button
+      @include convert-to-rem(width, 65)
+      @include convert-to-rem(font-size, 55)
+
+// under 576 = xs
+@include respond-below(xs)
+
+  .overlay__gallery
+    @include convert-to-rem(padding-left, 45)
+    @include convert-to-rem(padding-right, 45)
+
+    .image-gallery__button
+      @include convert-to-rem(width, 45)
+      @include convert-to-rem(font-size, 45)

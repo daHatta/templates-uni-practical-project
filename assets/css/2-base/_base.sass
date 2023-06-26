@@ -1,0 +1,55 @@
+// page
+html
+  //height: 100%
+
+body
+  //height: 100%
+  //display: flex
+  //flex-direction: column
+  background-color: $primary-background-color
+
+// content
+main
+  //flex: 1 0 auto
+  @include convert-to-rem(margin-bottom, 40)
+
+// footer
+footer
+  flex-shrink: 0
+
+// headlines
+h1, h2, h3, h4, h5, h6
+  text-align: center
+  color: $headline-color
+  font-weight: bold
+
+// links
+a
+  text-decoration: none
+  color: $link-color
+  &:hover
+    color: $hover-color
+  &:hover, &:visited, &:active
+    text-decoration: none
+
+// selection
+
+
+// lists
+ul, ol
+  list-style: none
+  padding-left: 0
+  margin-bottom: 0
+
+// images
+img
+  display: inline-block
+  max-width: 100%
+  height: auto
+
+// form elements
+label
+  color: $primary-color
+
+textarea, input
+  border: none

@@ -1,0 +1,63 @@
+<svg id="points" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 740">
+    <defs>
+        <style>
+            .cls-1 {
+                fill:none;
+                stroke-linecap:round;
+                stroke-width:0.5px;
+            }
+            .cls-1,
+            .cls-2
+            {
+                stroke:#343a40;
+                stroke-linejoin:round;
+            }
+            .cls-2
+            {
+                fill:#dbe8d5;
+                stroke-width:2px;
+            }
+        </style>
+    </defs>
+    <title>isometric-grid-laden-map</title>
+    <g id="waschmittel">
+        <polyline class="cls-1" points="128.45 394.07 336.08 394.07 336.08 405.2"/>
+        <circle class="cls-2" cx="116.45" cy="394.07" r="12"/>
+    </g>
+    <g id="vorraum">
+        <polyline class="cls-1" points="219.44 445 427.07 445 427.07 456.13"/>
+        <circle class="cls-2" cx="207.44" cy="445" r="12"/>
+    </g>
+    <g id="buero">
+        <polyline class="cls-1" points="379.47 543.06 617.09 543.06 617.09 554.19"/>
+        <circle class="cls-2" cx="367.47" cy="543.06" r="12"/>
+    </g>
+    <g id="pausenraum">
+        <polyline class="cls-1" points="514.46 619.17 752.09 619.17 752.09 630.29"/>
+        <circle class="cls-2" cx="502.46" cy="619.17" r="12"/>
+    </g>
+    <g id="lager">
+        <polyline class="cls-1" points="840.53 475.66 840.53 441 989.03 441"/>
+        <circle class="cls-2" cx="1001.03" cy="441" r="12"/>
+    </g>
+    <g id="fuelltisch">
+        <polyline class="cls-1" points="631.69 414.21 631.69 379.54 891.76 379.54"/>
+        <circle class="cls-2" cx="903.77" cy="379.54" r="12"/>
+    </g>
+    <g id="waschbecken">
+        <polyline class="cls-1" points="804.41 324.69 804.26 193.85 942.04 193.85"/>
+        <circle class="cls-2" cx="954.04" cy="193.85" r="12"/>
+    </g>
+    <g id="milchprodukte">
+        <polyline class="cls-1" points="600.48 257.15 600.33 126.31 738.1 126.31"/>
+        <circle class="cls-2" cx="750.1" cy="126.31" r="12"/>
+    </g>
+    <g id="spender">
+        <polyline class="cls-1" points="200.81 61.22 311.25 61.22 311.25 90.26"/>
+        <circle class="cls-2" cx="188.81" cy="61.22" r="12"/>
+    </g>
+    <g id="eier">
+        <polyline class="cls-1" points="104.77 114.77 260.94 114.77 260.94 125.89"/>
+        <circle class="cls-2" cx="92.77" cy="114.77" r="12"/>
+    </g>
+</svg>

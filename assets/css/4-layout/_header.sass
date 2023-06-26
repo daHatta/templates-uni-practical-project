@@ -1,0 +1,98 @@
+// site header
+.site-header
+  position: relative
+  border-top: 5px solid $primary-color
+  @include convert-to-rem(height, 110)
+  @include convert-to-rem(padding-right, 15)
+  @include convert-to-rem(padding-left, 15)
+
+// logo
+.site-header__logo
+  position: absolute
+  top: 50%
+  transform: translate(0, -50%)
+  display: inline-flex
+  flex-direction: column
+  flex-wrap: wrap
+  span
+    display: block
+    color: $headline-color
+    @include convert-to-rem(font-size, 38)
+    @include convert-to-rem(line-height, 34)
+    font-style: italic
+
+  span:first-child
+    text-transform: uppercase
+
+  span:last-child
+    font-weight: 700
+
+// toggle-bar
+.site-header__toogle-bar
+  display: none
+
+// breadcrumb
+.site-breadcrumb
+  .breadcrumb
+    border-radius: 0
+    background-color: $primary-background-color
+    margin-bottom: 0
+    @include convert-to-rem(padding-left, 15)
+    @include convert-to-rem(padding-right, 15)
+
+// under 992 = md
+@include respond-below(md)
+  .site-header
+    @include convert-to-rem(height, 80)
+
+  .site-header__logo
+    transform: none
+    flex-direction: row
+    @include convert-to-rem(top, 6)
+    span
+      @include convert-to-rem(font-size, 24)
+      @include convert-to-rem(line-height, 26)
+      &:first-child
+        @include convert-to-rem(margin-right, 5)
+
+// under 768 = sm
+@include respond-below(sm)
+  .site-header
+    height: auto
+    max-height: 100%
+
+  .site-header__logo
+    @include convert-to-rem(top, 8)
+
+  // toggle-bar
+  .site-header__toogle-bar
+    display: block
+    position: absolute
+    top: 0
+    @include convert-to-rem(right, 15)
+    border: 5px solid transparent
+    border-radius: 0 0 8px 8px
+    background-color: $primary-color
+    z-index: 100
+
+    button
+      @include convert-to-rem(width, 30)
+      @include convert-to-rem(height, 30)
+      @include convert-to-rem(padding-top, 5)
+      @include convert-to-rem(padding-bottom, 5)
+      border: 1px solid $button-border-color
+      background-color: $button-background-color
+      color: $button-font-color
+
+  .site-header__toggle-bar_search-button
+    border-radius: 0 0 4px 0
+
+  .site-header__toggle-bar_menu-button
+    border-radius: 0 0 0 4px
+
+
+.header-image_wrapper
+  position: relative
+
+.header-image_source
+  @include convert-to-rem(margin-top, 4)
